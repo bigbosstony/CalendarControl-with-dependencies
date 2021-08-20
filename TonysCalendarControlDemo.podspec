@@ -65,10 +65,11 @@ Pod::Spec.new do |spec|
   #
 
   # spec.platform     = :ios
-  spec.platform     = :ios
+  spec.platform     = :ios, "14.5"
+  spec.swift_version = "5"
 
   #  When using multiple platforms
-  spec.ios.deployment_target = "14.5"
+  # spec.ios.deployment_target = "14.5"
   # spec.osx.deployment_target = "10.7"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
@@ -80,7 +81,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :http => "https://raw.githubusercontent.com/bigbosstony/CalendarControl/main/CalendarControl.zip" }
+  spec.source       = { :git => "https://github.com/bigbosstony/CalendarControl-with-dependencies.git" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -133,7 +134,7 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  spec.ios.vendored_frameworks = "CalendarControl.xcframework" # Your XCFramework
+  spec.vendored_frameworks = "CalendarControl.xcframework" # Your XCFramework
   spec.dependency "Alamofire", "~> 5.4"
 
 end
